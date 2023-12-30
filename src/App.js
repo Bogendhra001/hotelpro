@@ -1,22 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Login from './login'; // Ensure correct import path and case
-
+import {  Link,Route,Routes} from 'react-router-dom';
+import  Login  from './components/login'; 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1>App Main Page</h1>
-          {/* Link to navigate to the login page */}
-          <Link to="/login">Go to Login Page</Link>
+    <>
+    <h1>this is the home page
+    </h1>
+    <nav>
+      <ul>
+        <li><Link to='/login'>Login</Link></li>
+      </ul>
+    </nav>
 
-          {/* Define a route for the Login component */}
-          <Route path="/login" component={Login} />
-        </header>
-      </div>
-    </Router>
+    <Routes>
+        <Route  path="/login" element={<Login/>} />
+    </Routes></> 
   );
 }
 
