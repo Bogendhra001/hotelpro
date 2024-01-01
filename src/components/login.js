@@ -1,15 +1,21 @@
 
 
+import { useState } from 'react';
 import './login.css';
+import Home from './home';
 export default function Login(){
+    const [setusername,Setusername]=useState("");
     const validate=()=>{
         let userName = document.getElementById('username').value;
         let password =document.getElementById("password").value;
         if(userName==="" || password==="") {
             alert("Please fill out all fields");
+
             return false;
             } else {
-                alert("Login Successful!");
+                Setusername(userName);
+                Home(setusername);
+                // alert("Login Successful!");
             }
 }
     return(

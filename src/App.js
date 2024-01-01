@@ -1,19 +1,17 @@
 import React from 'react';
-import {  Link,Route,Routes} from 'react-router-dom';
+import { Route,Routes} from 'react-router-dom';
 import  Login  from './components/login'; 
+import Initial from './components/initialscreen';
+import Home from './components/home';
+
+
 function App() {
   return (
     <>
-    <h1>this is the home page
-    </h1>
-    <nav>
-      <ul>
-        <li><Link to='/login'>Login</Link></li>
-      </ul>
-    </nav>
-
     <Routes>
         <Route  path="/login" element={<Login/>} />
+        <Route path="/" element={<Initial/>}/>
+        <Route path='/Home' element={<Home/>}/>
     </Routes></> 
   );
 }
